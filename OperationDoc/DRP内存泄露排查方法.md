@@ -1,6 +1,7 @@
 # 内存泄露问题测定
 
 命令查询采集是否有单独的容器运行
+
 (如运行失败，请在下列所有docker 命令前加sudo执行，如sudo docker ps | grep tomcatcollect)
 ```
 docker ps | grep tomcatcollect
