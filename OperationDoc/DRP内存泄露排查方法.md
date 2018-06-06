@@ -42,7 +42,17 @@ for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/
 
 **处理方法**
 
-    项目是早期上线的，基础镜像有更新，请联系开发获取新的基础镜像后，重新按照本文档执行
+  项目是早期上线的，基础镜像有更新，请联系开发获取新的基础镜像后，重新按照本文档执行
+
+  获取到包的处理方法
+  1. 上传包到服务器上
+
+  可以使用winscp工具
+  2. 使用命令载入包
+  ```Bash
+  docker load -i tomcat-ewell-20171026.tar
+  ```
+![images](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/loadTomcat.png)
 + docker命令操作权限不足
 
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/missSudo.png)
