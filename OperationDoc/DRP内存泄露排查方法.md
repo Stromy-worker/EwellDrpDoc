@@ -31,11 +31,9 @@ for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/
 4. 访问tomcatcollect的包管理网址,确认collect程序包正常运行(识别红框部分均是true) 
 
         http://[应用服务器ip]:8098/manager/html
-        
-        管理信息 admin/ewell
+        登录信息从部署文档中获取
     ![image](https://note.youdao.com/yws/public/resource/074ca7c423e9d4692373c4d731fb319b/xmlnote/5C4E88EA54E6463793F6707009D05BA2/199)
 5. 访问tomcat的包管理网址，删除采集的运行包
 
         http://[应用服务器ip]:8080/manager/html
-        
-        管理信息 admin/ewell
+        登录信息从部署文档中获取
