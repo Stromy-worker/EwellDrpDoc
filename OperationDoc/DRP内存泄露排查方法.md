@@ -34,3 +34,26 @@ for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/
         http://[应用服务器ip]:8080/manager/html
         登录信息从部署文档中获取
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/undeploy.png)
+---
+# 问题反馈和处理方法
++ 没有原始镜像
+![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/missImage.png)
+**处理方法**
+
+    项目是早期上线的，基础镜像有更新，请联系开发获取新的基础镜像后，重新按照本文档执行
++ docker命令操作权限不足
+![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/missSudo.png)
+**处理方法**
+
+  1. 使用下面的命令提升当前用户权限
+  ```Bash
+  sudo usermod -aG docker $(whoami)
+  ```
+  ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/grantDocker.png)
+  2. 退出当前登录
+  3. 登录后，重新按文档执行
++ docker命令执行警告
+![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/warnDeny.png)
+**处理方法**
+
+  从执行结果上看是成功了的，因此遇到这个问题按文档继续执行就好了
