@@ -69,7 +69,7 @@ for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/
 
   命令定位到包所在的目录，执行命令
   ```Bash
-  docker load -i tomcat-ewell-20171026.tar
+  docker load -i tomcat-ewell.20171026.tar
   ```
 ![images](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/loadTomcat.png)
 + docker命令操作权限不足
