@@ -1,4 +1,9 @@
 # 内存泄露问题测定
+
+`采集有给院方开放接口的，请忽略该排查方法`
+
+`目前和对接人员张玉刚沟通只有武汉协和医院存在这种情况`
+
 命令查询采集是否有单独的容器运行
 ```Bash
 docker ps | grep tomcatcollect
@@ -7,23 +12,30 @@ docker ps | grep tomcatcollect
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/nonTomcatCollect.png)
 - [x] 表示已经经过排查
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/ExistTomcatCollect.png)
+
 ---
+
 # 解决办法
+
 (**脚本中ip地址请替换成项目上的应用服务器ip**)
+
 1. 新建tomcatcollect镜像
 ```Bash
 docker run -d -m 8G -p 8098:8080 --log-driver=none -v /var/log/dripping/tomcatcollect:/usr/local/tomcat/logs -e config_url=192.168.40.126:2222 -e profile=dev -l company=ewell -l product=dripping --name tomcatcollect tomcat:ewell.20171026
 ```
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/collectContainer.png)
+
 2. 从原tomcat镜像中复制collect程序包
 ```Bash
 mkdir collect-change;for var in $(docker exec tomcat find /usr/local/tomcat/webapps -name '*collect.war');do docker cp tomcat:$var collect-change;done;ls collect-change
 ```
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/findCollectWar.png)
+
 3. 将collect程序包复制到tomcatcollect镜像中
 ```Bash
 for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/local/tomcat/webapps;sleep 10;done
 ```
+
 4. 访问tomcatcollect的包管理网址,确认collect程序包正常运行(识别红框部分均是true)
 
         http://[应用服务器ip]:8098/manager/html
@@ -42,13 +54,20 @@ for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/
 
 **处理方法**
 
-  项目是早期上线的，基础镜像有更新，请联系开发获取新的基础镜像后，重新按照本文档执行
+  项目是早期上线的，基础镜像有更新
+
+  新的基础镜像网盘地址
+
+`链接：https://pan.baidu.com/s/1tKYMUgYOsM5701PHK-rhYw 密码：7ul1`
 
   获取到包的处理方法
   1. 上传包到服务器上
 
-  可以使用winscp工具
+  可以使用winscp工具,使用方法可参照部署文档中的描述或网络百度
+
   2. 使用命令载入包
+
+  命令定位到包所在的目录，执行命令
   ```Bash
   docker load -i tomcat-ewell-20171026.tar
   ```
