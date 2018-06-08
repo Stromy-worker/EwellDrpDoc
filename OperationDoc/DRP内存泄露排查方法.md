@@ -47,6 +47,30 @@ for var in $(find collect-change/ -type f);do docker cp $var tomcatcollect:/usr/
         登录信息从部署文档中获取
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/undeploy.png)
 ---
+
+# 处理后的服务提升
+（实例来自山西儿童)
+
+处理前状况
+
+![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/collectBeforeCpu.png)
+
+处理后状况
+
+![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/collectAfterCpu.png)
+
+处理思路分析
+
+  采集是时时进行业务同步的服务，对cpu资源的使用有要求，有许多循环确认字段和数据的。采集和其他服务放置在一个tomcat里面，资源的竞争更加激烈，cpu使用优先者不断变更。更多更频繁的资源申请和顺序等待，导致cpu飙高。
+
+  ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/tomcatlog.png)
+  ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/collectLog.png)
+
+  日志上看，单日输出日志多的记录来自采集和baseinfo，说明业务十分依赖时时同步。从日志内容中可看出，单位时间内业务循环可达1毫秒3次之多。采集业务对资源的要求，无法通过业务调整去平衡，将其单独放置在一个环境中，不仅可以优化采集的资源使用，也可以避免因采集对资源占用，导致正常平台业务响应不了的风险
+
+
+
+---
 # 问题反馈和处理方法
 + 没有原始镜像
 
