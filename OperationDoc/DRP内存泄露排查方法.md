@@ -25,6 +25,10 @@ docker run -d -m 8G -p 8098:8080 --log-driver=none -v /var/log/dripping/tomcatco
 ```
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/collectContainer.png)
 
+> **小伙伴请注意，ip一定要记得改，注意下面红色框选区域**
+
+![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/ipError.png)
+
 2. 从原tomcat镜像中复制collect程序包
 ```Bash
 mkdir collect-change;for var in $(docker exec tomcat find /usr/local/tomcat/webapps -name '*collect.war');do docker cp tomcat:$var collect-change;done;ls collect-change
