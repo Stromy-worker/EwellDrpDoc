@@ -8,9 +8,9 @@
 ```Bash
 docker ps | grep tomcatcollect
 ```
-- [ ] 表示存在内存溢出的风险
+- [ ] 表示存在内存溢出的风险，需要执行解决办法
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/nonTomcatCollect.png)
-- [x] 表示已经经过排查
+- [x] 表示已经通过排查
 ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/ExistTomcatCollect.png)
 
 ---
