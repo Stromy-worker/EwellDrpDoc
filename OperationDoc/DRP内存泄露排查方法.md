@@ -44,7 +44,7 @@ docker ps | grep tomcatcollect
         http://[应用服务器ip]:8098/manager/html
         登录信息从部署文档中获取
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/collectStart.png)
-5. 访问tomcat的包管理网址，删除采集的运行包
+5. 访问tomcat的包管理网址，删除采集(path对应列中包含collect的对应行)的运行包
 
         http://[应用服务器ip]:8080/manager/html
         登录信息从部署文档中获取
