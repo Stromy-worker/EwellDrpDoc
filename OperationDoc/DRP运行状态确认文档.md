@@ -97,7 +97,7 @@
     从查询中获取到任务的id(紫色框选部分)，使用命令查询任务的发布状态
 
     ```Bash
-    docker service inspect [运行服务任务的id]
+    docker service ps [运行服务任务的id]
     ```
     **红框** 框异常原因
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/dockerServiceException.png)
