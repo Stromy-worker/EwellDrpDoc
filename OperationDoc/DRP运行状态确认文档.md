@@ -12,17 +12,24 @@
 
         telnet [应用服务器ip] 22
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/telnetBefore.png)
+    
     输入命令回车，界面返回
     <br>**(使用Ctrl + ]退出到telnet，再输入quit退出telnet)**
+    
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/telnetAfter.png)
 1. 应用服务器可以通过远程管理工具连通
 
     打开putty,输入登录信息尝试登录
+    
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/puttyInfo.png)
+    
     输入用户名和密码
     <br>** *(密码输入是不显示在界面上的, 输好再按回车)* **
+    
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/puttyLogin.png)
+    
     登录成功提示
+    
     ![image](https://raw.githubusercontent.com/Stromy-worker/EwellDrpDoc/master/Resource/pic/puttyOk.png)
 
 # 检查应用服务器服务运行状态
