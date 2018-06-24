@@ -35,7 +35,7 @@
 # 检查应用服务器采集服务运行状态
 
 1. 访问tomcat管理网址确定平台服务运行状态
-    > tomcat管理网址:** _http://[应用服务器ip]:8080/manager/html_ **
+    > tomcat管理网址:_http://[应用服务器ip]:8080/manager/html_
 
     *确认方法和上面tomcat检查方法一致*
 
@@ -46,8 +46,6 @@
     |服务名称|日志位置|日志包含关键字|
     |---|:---|---|
     |configCollect|[tomcat安装目录]\bin\logs|configCollect|
-
----
 
 ---
 
