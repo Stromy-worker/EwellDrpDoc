@@ -79,9 +79,11 @@
 
 1. 确认移动护理配置，验证登录
     1. 移动护理后台服务配置地址
+
     ![image](./../Resource/pic/nursingConfDir.png)
 
     1. 确认医惠护士地址和organCode填写符合要求
+
     ![image](./../Resource/pic/NursingConfOrgancode.png)
 
     1. 访问移动客户端验证登录
