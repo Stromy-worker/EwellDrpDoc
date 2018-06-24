@@ -51,38 +51,33 @@
 
 # 登录问题分析方法
 分析思路:   确认医惠平台服务运行正常 》 确认通过接口登录正常 》 确认通过移动护理客户端登录正常
-
 1. 通过 [检查应用服务器医惠平台运行状态](#检查应用服务器医惠平台运行状态) 检查
-
 1. 访问登录验证接口，验证登录接口
     1. 访问Auth服务api swagger地址，按框选打开接口页面
-    > http://[应用服务器]:8080/auth/swagger-ui.html
+        > http://[应用服务器]:8080/auth/swagger-ui.html
 
-    ![image](./../Resource/pic/authLoginUi.png)
-
+        ![image](./../Resource/pic/authLoginUi.png)
     1. 尝试进行登录(**注意organCode和密码的填写，密码填写需要写加密的密文**)
-
         > |明文|加密方式|密文|
         > |---|:---|---|
         > |ewell|md5|390b18c9fc21ffbf|
         > |123456|md5|5b4ae7428c86cc1c|
 
-    使用admin用户验证医惠护士账户
+        使用admin用户验证医惠护士账户
 
-    使用dba用户验证移动护理账户
+        使用dba用户验证移动护理账户
 
-    ![image](./../Resource/pic/authLoginTest.png)
+        ![image](./../Resource/pic/authLoginTest.png)
 
     **结果不符合预期，按[检查应用服务器医惠平台运行状态](#检查应用服务器医惠平台运行状态)提供auth的日志**
-
 1. 确认移动护理配置，验证登录
     1. 移动护理后台服务配置地址
 
-    ![image](./../Resource/pic/nursingConfDir.png)
+        ![image](./../Resource/pic/nursingConfDir.png)
 
     1. 确认医惠护士地址和organCode填写符合要求
 
-    ![image](./../Resource/pic/NursingConfOrgancode.png)
+        ![image](./../Resource/pic/NursingConfOrgancode.png)
 
     1. 访问移动客户端验证登录
 
