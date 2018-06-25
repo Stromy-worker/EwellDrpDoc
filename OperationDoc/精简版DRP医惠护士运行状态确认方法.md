@@ -92,3 +92,10 @@ OAUTH_ACCESS_TOKEN中同一个用户存在两条记录，删除这两条记录�
 ![image](./../Resource/pic/databaseOauthAccessToken.png)
 
 ---
+### 关键字 internalAutheticationServiceException  dripping.userInfoUrl
+
+![image](./../Resource/pic/internalAutheticationServiceException.png)
+
+说明和解决方法看下图
+
+![image](./../Resource/pic/authConfFirstLine.png)
