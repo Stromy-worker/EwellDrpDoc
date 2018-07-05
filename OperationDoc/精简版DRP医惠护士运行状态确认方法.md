@@ -52,6 +52,24 @@
 # 登录问题分析方法
 分析思路:   确认医惠平台服务运行正常 》 确认通过接口登录正常 》 确认通过移动护理客户端登录正常
 1. 通过 [检查应用服务器医惠平台运行状态](#检查应用服务器医惠平台运行状态) 检查
+
+1. 确认organcode设置
+    1. 确认数据库的organcode
+
+        **oauth数据库T_SYS_USER表的organcode<br>
+        userdb数据库T_SYS_USER表的organcode**
+
+        确认红框部分的*organCode*是否正确，第一个框是**organcode-loginname**的组全，第二个框是**organcode**
+
+        ![image](./../Resource/pic/databaseOrgancode.png)
+
+    1. 访问auth服务配置文件，确认配置文件中的organcode
+        >http://[应用服务器]:2222/auth-service-dev.yml
+
+        检索定位到关键字organCode位置，确认organcode
+
+        ![image](./../Resource/pic/authConfOrgancode.png)
+
 1. 访问登录验证接口，验证登录接口
     1. 访问Auth服务api swagger地址，按框选打开接口页面
         > http://[应用服务器]:8080/auth/swagger-ui.html
@@ -63,8 +81,7 @@
         > |ewell|md5|390b18c9fc21ffbf|
         > |123456|md5|5b4ae7428c86cc1c|
 
-        使用admin用户验证医惠护士账户
-
+        使用admin用户验证医惠护士账户<br>
         使用dba用户验证移动护理账户
 
         ![image](./../Resource/pic/authLoginTest.png)
