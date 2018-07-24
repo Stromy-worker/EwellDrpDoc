@@ -63,12 +63,23 @@
 
         ![image](./../Resource/pic/databaseOrgancode.png)
 
-    1. 访问auth服务配置文件，确认配置文件中的organcode
-        >http://[应用服务器]:2222/auth-service-dev.yml
+    1. 打开服务配置文件，确认配置文件中的organcode
+
+        找到环境变量EWELL_ENV设置的路径,打开dripping文件夹，查看配置文件
+
+        ![image](./../Resource/pic/ewellEnv.png)
+
+        >auth-service-dev.properties
 
         检索定位到关键字organCode位置，确认organcode
 
         ![image](./../Resource/pic/authConfOrgancode.png)
+
+        >sys-service-dev.properties
+
+        检索定位到关键字organCode位置，确认organcode
+
+        ![image](./../Resource/pic/sysConfOrgancode.png)
 
 1. 访问登录验证接口，验证登录接口
     1. 访问Auth服务api swagger地址，按框选打开接口页面
